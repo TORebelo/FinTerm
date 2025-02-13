@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Terminal Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('portfolio_view') }}">Portfolio</a></li>
+            <li><a href="{{ url_for('stock_info_view') }}">Stock Info</a></li>
+            <li><a href="{{ url_for('market_news_view') }}">Market News</a></li>
+            <li><a href="{{ url_for('compare_view') }}">Compare Stocks</a></li>
+        </ul>
+    </nav>
+    <h1>Welcome to the Stock Terminal</h1>
+    <div id="dashboard">
+        <!-- Add dashboard widgets here -->
+    </div>
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>

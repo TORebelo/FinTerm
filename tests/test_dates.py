@@ -1,6 +1,6 @@
 import asyncio
 from datetime import datetime
-from portfolio import Portfolio
+from ..main_python.portfolio import Portfolio
 
 async def main():
     # Initialize portfolio with API key

@@ -9,7 +9,7 @@ app = Flask(__name__)
 api_key = ct.api_key_polygon
 portfolio = Portfolio(api_key)
 
-@app.route('/Web_tools/main.html')
+@app.route('/Web_tools/')
 def index():
     return render_template('main.html')
 
