@@ -1,6 +1,10 @@
 import asyncio
 from datetime import datetime
-from ..main_python.portfolio import Portfolio
+import os 
+import sys 
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(parent_dir)
+from portfolio import Portfolio
 
 async def main():
     # Initialize portfolio with API key

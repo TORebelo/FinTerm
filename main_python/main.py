@@ -2,16 +2,17 @@ from flask import Flask, render_template, request, jsonify
 from datetime import datetime
 from portfolio import Portfolio
 from stock import get_stock_info, plot_stock_chart
-import constants as ct
+import constants as constants 
 import asyncio
+import os
 
-app = Flask(__name__)
-api_key = ct.api_key_polygon
-portfolio = Portfolio(api_key)
+app = Flask(__name__ , template_folder=( './Web_tools/html'))
 
-@app.route('/Web_tools/')
+portfolio = Portfolio(constants.API_KEY_POLYGON)
+
+@app.route('/')
 def index():
-    return render_template('main.html')
+    return render_template( 'main.html')
 
 @app.route('/execute', methods=['POST'])
 def execute_command():
