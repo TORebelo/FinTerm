@@ -6,7 +6,9 @@ import constants as constants
 import asyncio
 import os
 
-app = Flask(__name__ , template_folder=( './Web_tools/html'))
+app = Flask(__name__,
+            static_folder='Web_tools',  # Path to the folder containing static files
+            template_folder='Web_tools/html')  # Path to the folder containing templates
 
 portfolio = Portfolio(constants.API_KEY_POLYGON)
 
