@@ -7,14 +7,14 @@ import asyncio
 import os
 
 app = Flask(__name__,
-            static_folder='Web_tools',  # Path to the folder containing static files
-            template_folder='Web_tools/html')  # Path to the folder containing templates
+            static_folder='Web_tools',
+            template_folder='Web_tools/html')
 
 portfolio = Portfolio(constants.API_KEY_POLYGON)
 
 @app.route('/')
 def index():
-    return render_template( 'main.html')
+    return render_template('main.html')
 
 @app.route('/execute', methods=['POST'])
 def execute_command():
@@ -56,13 +56,10 @@ Commands:
             response['message'] = f"Error viewing stock: {e}"
 
     elif command == "summary":
-        asyncio.run(portfolio.display_portfolio())
-        total_value = asyncio.run(portfolio.get_total_value())
-        response['message'] = f"Total Portfolio Value: ${total_value:.2f}"
-        response['chart'] = portfolio.plot_portfolio_value()
+        total_value = asyncio.run(portfolio.display_portfolio())
+        response['message'] = total_value
 
     elif command == "news":
-        # Implement a function to fetch market news
         response['message'] = "Fetching market news..."
         response['news'] = get_market_news()
 
@@ -70,7 +67,6 @@ Commands:
         try:
             _, ticker = command.split()
             ticker = ticker.upper()
-            # Implement a function to add and track a benchmark
             add_benchmark(ticker)
             response['message'] = f"Added {ticker} as a benchmark."
         except Exception as e:
@@ -80,7 +76,6 @@ Commands:
         try:
             _, ticker1, ticker2 = command.split()
             ticker1, ticker2 = ticker1.upper(), ticker2.upper()
-            # Implement a function to compare two stocks
             comparison_data = compare_stocks(ticker1, ticker2)
             response['message'] = f"Comparing {ticker1} and {ticker2}"
             response['comparison'] = comparison_data
@@ -94,7 +89,6 @@ Commands:
 
 def get_market_news():
     # Implement this function to fetch market news
-    # You can use a news API or web scraping
     pass
 
 def add_benchmark(ticker):

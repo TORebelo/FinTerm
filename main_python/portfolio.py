@@ -141,10 +141,12 @@ class Portfolio:
 
     async def display_portfolio(self):
         """Display portfolio with purchase prices and current values."""
-        print("\nCurrent Portfolio Status:")
-        print("-" * 85)
-        print(f"{'Ticker':<8} {'Shares':<8} {'Buy Price':<12} {'Curr Price':<12} {'Total Value':<12} {'Change %':<10}")
-        print("-" * 85)
+        
+        res = "\nCurrent Portfolio Status:"
+        res += "\n" + "-" * 85 + "\n"
+        res += f"{'Ticker':<8} {'Shares':<8} {'Buy Price':<12} {'Curr Price':<12} {'Total Value':<12} {'Change %':<10}\n"
+        res += "-" * 85 + "\n"
+       
         
         total_value = 0
         total_cost = 0
@@ -156,13 +158,17 @@ class Portfolio:
                 change = (current_price - data['purchase_price']) / data['purchase_price'] * 100
                 total_value += value
                 total_cost += cost
-                print(f"{ticker:<8} {data['shares']:<8} ${data['purchase_price']:<11.2f} ${current_price:<11.2f} ${value:<11.2f} {change:>7.2f}%")
+                res += f"{ticker:<8} {data['shares']:<8} ${data['purchase_price']:<11.2f} ${current_price:<11.2f} ${value:<11.2f} {change:>7.2f}%\n"
+                
         
-        print("-" * 85)
+        res += "-" * 85 
         total_return = ((total_value - total_cost) / total_cost * 100) if total_cost > 0 else 0
-        print(f"Total Cost: ${total_cost:.2f}")
-        print(f"Total Value: ${total_value:.2f}")
-        print(f"Total Return: {total_return:.2f}%")
+        res += f"\nTotal Cost: ${total_cost:.2f}\n"
+        res += f"Total Value: ${total_value:.2f}\n"
+        res += f"Total Return: {total_return:.2f}%\n"
+        print(res)
+        return res
+        
 
     async def display_yearly_values(self):
         """Display portfolio value at the end of each year."""

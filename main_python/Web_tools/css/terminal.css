@@ -1,51 +1,102 @@
-/* General styles */
-body {
+body, html {
     margin: 0;
     padding: 0;
-    background-color: #1e1e1e; /* Dark background */
-    color: #00ff00; /* Green text, like a terminal */
-    font-family: 'Courier New', monospace; /* Monospace font */
-    font-size: 16px;
-    line-height: 1.5;
+    height: 100%;
+    font-family: 'Courier New', monospace;
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
 
-/* Terminal container */
 #terminal {
-    width: 80%;
-    height: 80vh;
-    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#command-area {
+    background-color: #000;
     padding: 10px;
-    background-color: #000; /* Black background for the terminal */
-    border: 2px solid #00ff00; /* Green border */
-    border-radius: 5px;
-    overflow-y: auto; /* Enable scrolling for output */
-}
-
-/* Output area */
-#output {
-    white-space: pre-wrap; /* Preserve whitespace and line breaks */
-    word-wrap: break-word; /* Break long lines */
-}
-
-/* Input line */
-#input-line {
     display: flex;
     align-items: center;
 }
 
-/* Prompt symbol */
 #prompt {
-    color: #00ff00; /* Green prompt */
     margin-right: 5px;
 }
 
-/* Input field */
 #input {
     flex-grow: 1;
-    background-color: transparent;
+    background: none;
     border: none;
-    color: #00ff00; /* Green text */
+    color: #ffffff;
+    outline: none;
     font-family: 'Courier New', monospace;
     font-size: 16px;
-    outline: none; /* Remove default outline */
+}
+
+#main-area {
+    flex-grow: 1;
+    position: relative;
+}
+
+.window {
+    position: absolute;
+    background-color: #000000;
+    border: 1px solid #000000;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+    min-width: 300px;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.window-header {
+    background-color: #000000;
+    color: #ff9900;
+    padding: 5px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+}
+
+.window-content {
+    flex-grow: 1;
+    padding: 10px;
+    overflow: auto;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: #ff5151;
+    cursor: pointer;
+}
+
+#tab-area {
+    display: flex;
+    background-color: #000;
+    padding: 5px;
+}
+
+.tab {
+    background-color: #333;
+    color: #ff9900;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: #ff9900;
+    color: #000;
+}
+
+#new-tab {
+    background-color: #333;
+    color: #ff9900;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
 }
