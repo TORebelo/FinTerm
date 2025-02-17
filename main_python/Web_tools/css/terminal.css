@@ -18,6 +18,8 @@ body, html {
     padding: 10px;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 1001;
 }
 
 #prompt {
@@ -45,9 +47,12 @@ body, html {
     border: 1px solid #000000;
     color: #ffffff;
     font-family: 'Courier New', monospace;
-    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
     min-width: 300px;
     min-height: 200px;
+    max-width: 80%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
     overflow: hidden;
 }
 
@@ -58,12 +63,19 @@ body, html {
     cursor: move;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+   
 }
 
 .window-content {
     flex-grow: 1;
     padding: 10px;
     overflow: auto;
+}
+
+.window-content pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .close-button {
@@ -77,6 +89,8 @@ body, html {
     display: flex;
     background-color: #000;
     padding: 5px;
+    position: relative;
+    z-index: 1001;
 }
 
 .tab {
@@ -99,4 +113,17 @@ body, html {
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+}
+
+.window-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.window-content::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+.window-content::-webkit-scrollbar-thumb {
+    background-color: #00ff00;
+    border-radius: 4px;
 }

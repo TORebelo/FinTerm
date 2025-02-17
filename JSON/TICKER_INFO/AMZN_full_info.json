@@ -1,0 +1,70 @@
+{
+  "General Information": {
+    "Company Name": "Amazon.com, Inc.",
+    "Ticker": "AMZN",
+    "Industry": "Internet Retail",
+    "Sector": "Consumer Cyclical",
+    "Country": "United States",
+    "Website": "https://www.aboutamazon.com",
+    "Description": "Amazon.com, Inc. engages in the retail sale of consumer products, advertising, and subscriptions service through online and physical stores in North America and internationally. The company operates through three segments: North America, International, and Amazon Web Services (AWS). It also manufactures and sells electronic devices, including Kindle, Fire tablets, Fire TVs, Echo, Ring, Blink, and eero; and develops and produces media content. In addition, the company offers programs that enable sellers to sell their products in its stores; and programs that allow authors, independent publishers, musicians, filmmakers, Twitch streamers, skill and app developers, and others to publish and sell content. Further, it provides compute, storage, database, analytics, machine learning, and other services, as well as advertising services through programs, such as sponsored ads, display, and video advertising. Additionally, the company offers Amazon Prime, a membership program. The company's products offered through its stores include merchandise and content purchased for resale and products offered by third-party sellers. It serves consumers, sellers, developers, enterprises, content creators, advertisers, and employees. Amazon.com, Inc. was incorporated in 1994 and is headquartered in Seattle, Washington."
+  },
+  "Market Data": {
+    "Current Price": 230.37,
+    "Market Cap": 2441391898624,
+    "52 Week High": 242.52,
+    "52 Week Low": 151.61,
+    "Volume": 31054281,
+    "Average Volume": 36739410,
+    "P/E Ratio": 41.58303,
+    "Forward P/E": 30.429153,
+    "Dividend Yield": "N/A"
+  },
+  "Financial Metrics": {
+    "Revenue": 620127977472,
+    "Gross Profit": 300180013056,
+    "Net Income": 49868001280,
+    "EPS": 5.54,
+    "Forward EPS": 6.15,
+    "PEG Ratio": "N/A",
+    "Book Value": 24.655,
+    "Price to Book": 9.343743
+  },
+  "Additional Information": {
+    "Employees": 1551000,
+    "Founded": "1997-05-15",
+    "CEO": "Mr. Jeffrey P. Bezos",
+    "Next Earnings Date": "N/A"
+  },
+  "Recent SEC Filings": [
+    {
+      "Form Type": "10-K",
+      "Filed Date": "2025-02-07",
+      "Period of Report": "2024-12-31",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0001018724/000101872425000004/amzn-20241231.htm"
+    },
+    {
+      "Form Type": "10-Q",
+      "Filed Date": "2024-11-01",
+      "Period of Report": "2024-09-30",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0001018724/000101872424000161/amzn-20240930.htm"
+    },
+    {
+      "Form Type": "10-Q",
+      "Filed Date": "2024-08-02",
+      "Period of Report": "2024-06-30",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0001018724/000101872424000130/amzn-20240630.htm"
+    },
+    {
+      "Form Type": "10-Q",
+      "Filed Date": "2024-05-01",
+      "Period of Report": "2024-03-31",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0001018724/000101872424000083/amzn-20240331.htm"
+    },
+    {
+      "Form Type": "10-K",
+      "Filed Date": "2024-02-02",
+      "Period of Report": "2023-12-31",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0001018724/000101872424000008/amzn-20231231.htm"
+    }
+  ]
+}

@@ -38,10 +38,15 @@ def get_sec_filings(cik, form_types=["10-K", "10-Q"], count=5):
         print(f"Error fetching SEC filings: {e}")
         return []
 
+import json
+import yfinance as yf
+import requests
+import pandas as pd
+
 def get_stock_info(ticker):
     """Fetch comprehensive stock and financial data from multiple sources."""
     
-    # Get CIK from ticker
+    # Get CIK from ticker (assuming get_cik_from_ticker is defined elsewhere)
     cik = get_cik_from_ticker(ticker)
     if not cik:
         print(f"Error: CIK not found for ticker {ticker}")
@@ -59,7 +64,7 @@ def get_stock_info(ticker):
     except requests.exceptions.RequestException:
         polygon_data = {}
 
-    # Fetch SEC filings
+    # Fetch SEC filings (assuming get_sec_filings is defined elsewhere)
     sec_filings = get_sec_filings(cik)
 
     # Fetch additional financial data
@@ -76,7 +81,9 @@ def get_stock_info(ticker):
             "Sector": yf_info.get('sector', 'N/A'),
             "Country": yf_info.get('country', 'N/A'),
             "Website": yf_info.get('website', 'N/A'),
-            "Description": yf_info.get('longBusinessSummary', 'N/A')
+            "Description": 
+            yf_info.get('longBusinessSummary', 'N/A')
+            
         },
         "Market Data": {
             "Current Price": yf_info.get('currentPrice', 'N/A'),
@@ -108,7 +115,16 @@ def get_stock_info(ticker):
         "Recent SEC Filings": sec_filings
     }
 
-    return info
+    # Convert the info dictionary to a formatted JSON string
+    info_str = json.dumps(info, indent=2)
+
+    # Save the full info to a JSON file
+    with open(f"{ticker}_full_info.json", "w") as f:
+        json.dump(info, f, indent=2)
+    print(f"\nFull information for {ticker} has been saved to {ticker}_full_info.json")
+
+    # Return the JSON string
+    return info_str
 
 def plot_stock_chart(ticker, period="1y"):
     """Plot an interactive stock chart using Plotly."""

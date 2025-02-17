@@ -1,0 +1,70 @@
+{
+  "General Information": {
+    "Company Name": "Microsoft Corporation",
+    "Ticker": "MSFT",
+    "Industry": "Software - Infrastructure",
+    "Sector": "Technology",
+    "Country": "United States",
+    "Website": "https://www.microsoft.com",
+    "Description": "Microsoft Corporation develops and supports software, services, devices and solutions worldwide. The Productivity and Business Processes segment offers office, exchange, SharePoint, Microsoft Teams, office 365 Security and Compliance, Microsoft viva, and Microsoft 365 copilot; and office consumer services, such as Microsoft 365 consumer subscriptions, Office licensed on-premises, and other office services. This segment also provides LinkedIn; and dynamics business solutions, including Dynamics 365, a set of intelligent, cloud-based applications across ERP, CRM, power apps, and power automate; and on-premises ERP and CRM applications. The Intelligent Cloud segment offers server products and cloud services, such as azure and other cloud services; SQL and windows server, visual studio, system center, and related client access licenses, as well as nuance and GitHub; and enterprise services including enterprise support services, industry solutions, and nuance professional services. The More Personal Computing segment offers Windows, including windows OEM licensing and other non-volume licensing of the Windows operating system; Windows commercial comprising volume licensing of the Windows operating system, windows cloud services, and other Windows commercial offerings; patent licensing; and windows Internet of Things; and devices, such as surface, HoloLens, and PC accessories. Additionally, this segment provides gaming, which includes Xbox hardware and content, and first- and third-party content; Xbox game pass and other subscriptions, cloud gaming, advertising, third-party disc royalties, and other cloud services; and search and news advertising, which includes Bing, Microsoft News and Edge, and third-party affiliates. The company sells its products through OEMs, distributors, and resellers; and directly through digital marketplaces, online, and retail stores. The company was founded in 1975 and is headquartered in Redmond, Washington."
+  },
+  "Market Data": {
+    "Current Price": 410.54,
+    "Market Cap": 3051946246144,
+    "52 Week High": 468.35,
+    "52 Week Low": 385.58,
+    "Volume": 22907230,
+    "Average Volume": 21902640,
+    "P/E Ratio": 33.134785,
+    "Forward P/E": 27.289612,
+    "Dividend Yield": "0.75%"
+  },
+  "Financial Metrics": {
+    "Revenue": 254189993984,
+    "Gross Profit": 176278994944,
+    "Net Income": 90511998976,
+    "EPS": 12.39,
+    "Forward EPS": 14.95,
+    "PEG Ratio": "N/A",
+    "Book Value": 36.115,
+    "Price to Book": 11.367576
+  },
+  "Additional Information": {
+    "Employees": 228000,
+    "Founded": "N/A",
+    "CEO": "Mr. Satya  Nadella",
+    "Next Earnings Date": "N/A"
+  },
+  "Recent SEC Filings": [
+    {
+      "Form Type": "10-Q",
+      "Filed Date": "2025-01-29",
+      "Period of Report": "2024-12-31",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0000789019/000095017025010491/msft-20241231.htm"
+    },
+    {
+      "Form Type": "10-Q",
+      "Filed Date": "2024-10-30",
+      "Period of Report": "2024-09-30",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0000789019/000095017024118967/msft-20240930.htm"
+    },
+    {
+      "Form Type": "10-K",
+      "Filed Date": "2024-07-30",
+      "Period of Report": "2024-06-30",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0000789019/000095017024087843/msft-20240630.htm"
+    },
+    {
+      "Form Type": "10-Q",
+      "Filed Date": "2024-04-25",
+      "Period of Report": "2024-03-31",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0000789019/000095017024048288/msft-20240331.htm"
+    },
+    {
+      "Form Type": "10-Q",
+      "Filed Date": "2024-01-30",
+      "Period of Report": "2023-12-31",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0000789019/000095017024008814/msft-20231231.htm"
+    }
+  ]
+}

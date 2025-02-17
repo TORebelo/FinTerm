@@ -1,0 +1,70 @@
+{
+  "General Information": {
+    "Company Name": "Alphabet Inc.",
+    "Ticker": "GOOGL",
+    "Industry": "Internet Content & Information",
+    "Sector": "Communication Services",
+    "Country": "United States",
+    "Website": "https://abc.xyz",
+    "Description": "Alphabet Inc. offers various products and platforms in the United States, Europe, the Middle East, Africa, the Asia-Pacific, Canada, and Latin America. It operates through Google Services, Google Cloud, and Other Bets segments. The Google Services segment provides products and services, including ads, Android, Chrome, devices, Gmail, Google Drive, Google Maps, Google Photos, Google Play, Search, and YouTube. It is also involved in the sale of apps and in-app purchases and digital content in the Google Play and YouTube; and devices, as well as in the provision of YouTube consumer subscription services. The Google Cloud segment offers infrastructure, cybersecurity, databases, analytics, AI, and other services; Google Workspace that include cloud-based communication and collaboration tools for enterprises, such as Gmail, Docs, Drive, Calendar, and Meet; and other services for enterprise customers. The Other Bets segment sells healthcare-related and internet services. The company was incorporated in 1998 and is headquartered in Mountain View, California."
+  },
+  "Market Data": {
+    "Current Price": 186.14,
+    "Market Cap": 2279191347200,
+    "52 Week High": 207.05,
+    "52 Week Low": 130.67,
+    "Volume": 20124804,
+    "Average Volume": 29078041,
+    "P/E Ratio": 23.151741,
+    "Forward P/E": 18.180895,
+    "Dividend Yield": "0.40%"
+  },
+  "Financial Metrics": {
+    "Revenue": 339859013632,
+    "Gross Profit": 197550997504,
+    "Net Income": 94268997632,
+    "EPS": 8.04,
+    "Forward EPS": 8.96,
+    "PEG Ratio": "N/A",
+    "Book Value": 25.613,
+    "Price to Book": 7.267403
+  },
+  "Additional Information": {
+    "Employees": 181269,
+    "Founded": "2004-08-19",
+    "CEO": "Mr. Sundar  Pichai",
+    "Next Earnings Date": "N/A"
+  },
+  "Recent SEC Filings": [
+    {
+      "Form Type": "10-K",
+      "Filed Date": "2025-02-05",
+      "Period of Report": "2024-12-31",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204425000014/goog-20241231.htm"
+    },
+    {
+      "Form Type": "10-Q",
+      "Filed Date": "2024-10-30",
+      "Period of Report": "2024-09-30",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204424000118/goog-20240930.htm"
+    },
+    {
+      "Form Type": "10-Q",
+      "Filed Date": "2024-07-24",
+      "Period of Report": "2024-06-30",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204424000079/goog-20240630.htm"
+    },
+    {
+      "Form Type": "10-Q",
+      "Filed Date": "2024-04-26",
+      "Period of Report": "2024-03-31",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204424000053/goog-20240331.htm"
+    },
+    {
+      "Form Type": "10-K",
+      "Filed Date": "2024-01-31",
+      "Period of Report": "2023-12-31",
+      "URL": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204424000022/goog-20231231.htm"
+    }
+  ]
+}

@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentTab = 0;
     let windowIndex = 0;
     let tabs = [];
+    let windows = [];
 
-    // Create a new tab
     function createTab() {
         const tab = document.createElement('button');
         tab.className = 'tab';
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return tab;
     }
 
-    // Switch between tabs
     function switchTab(index) {
         tabs.forEach((tab, i) => {
             tab.classList.toggle('active', i === index);
@@ -29,10 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         currentTab = index;
     }
 
-    // Add event listener for the new tab button
     newTabButton.addEventListener('click', createTab);
 
-    // Handle input commands
     input.addEventListener('keydown', async (e) => {
         if (e.key === 'Enter') {
             const command = input.value.trim();
@@ -58,8 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Send command to the backend
     async function sendCommand(command) {
+        if (command.toLowerCase() === 'clear' || command.toLowerCase() === 'kill') {
+            clearAllWindows();
+            return;
+        }
+
         try {
             const response = await fetch('/execute', {
                 method: 'POST',
@@ -76,12 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Create a new window for command output
     function createWindow(command, data) {
         const window = document.createElement('div');
         window.className = 'window';
-        window.style.top = `${50 + (windowIndex * 20)}px`;
-        window.style.left = `${50 + (windowIndex * 20)}px`;
+        window.style.top = `${300 + (windowIndex * 20)}px`;
+        window.style.left = `${400 + (windowIndex * 20)}px`;
+        window.style.width = '600PX';
+        window.style.height = '600PX';
         windowIndex = (windowIndex + 1) % 10;
 
         const header = document.createElement('div');
@@ -91,7 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const closeButton = document.createElement('button');
         closeButton.className = 'close-button';
         closeButton.textContent = 'X';
-        closeButton.addEventListener('click', () => window.remove());
+        closeButton.addEventListener('click', () => {
+            window.remove();
+            windows = windows.filter(w => w !== window);
+        });
 
         header.appendChild(closeButton);
 
@@ -122,14 +127,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         makeDraggable(window);
         makeResizable(window);
+
+        windows.push(window);
+        window.style.zIndex = windows.length;
     }
 
-    // Make windows draggable using interact.js
     function makeDraggable(element) {
         interact(element).draggable({
             listeners: {
                 start(event) {
-                    event.target.style.zIndex = 1000; // Bring to front
+                    const maxZIndex = Math.max(...windows.map(w => parseInt(w.style.zIndex) || 0));
+                    event.target.style.zIndex = maxZIndex + 1;
                 },
                 move(event) {
                     const target = event.target;
@@ -144,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Make windows resizable using interact.js
     function makeResizable(element) {
         interact(element).resizable({
             edges: { bottom: true, right: true },
@@ -168,27 +175,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Render a chart (placeholder)
+    function clearAllWindows() {
+        windows.forEach(window => window.remove());
+        windows = [];
+        windowIndex = 0;
+    }
+
     function renderChart(container, chartData) {
         const chartElement = document.createElement('div');
         chartElement.textContent = 'Chart placeholder';
         container.appendChild(chartElement);
     }
 
-    // Render news (placeholder)
     function renderNews(container, newsData) {
         const newsElement = document.createElement('div');
         newsElement.textContent = 'News placeholder';
         container.appendChild(newsElement);
     }
 
-    // Render comparison (placeholder)
     function renderComparison(container, comparisonData) {
         const comparisonElement = document.createElement('div');
         comparisonElement.textContent = 'Comparison placeholder';
         container.appendChild(comparisonElement);
     }
 
-    // Initialize the first tab
     createTab();
 });
