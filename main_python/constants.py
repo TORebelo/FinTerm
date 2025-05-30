@@ -1,9 +1,0 @@
-# constants.py
-import os 
-
-DEFAULT_START_DATE = "2020-01-01"
-DEFAULT_END_DATE = "2023-01-01"
-
-
-API_KEY_POLYGON  = 'keDH5lgSUzRw2em9oTcRdD9CHiHKiTaB'
-API_KEY_SEC = "YOUR_SEC_API_KEY"

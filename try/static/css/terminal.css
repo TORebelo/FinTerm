@@ -1,0 +1,402 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Courier New', monospace;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+#terminal {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#command-area {
+    background-color: #000;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1001;
+}
+
+#prompt {
+    margin-right: 5px;
+}
+
+#input {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+}
+
+#main-area {
+    flex-grow: 1;
+    position: relative;
+}
+
+.window {
+    position: absolute;
+    background-color: #000000;
+    border: 1px solid #000000;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    min-width: 300px;
+    min-height: 200px;
+    max-width: 80%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    overflow: hidden;
+}
+
+.window-header {
+    background-color: #000000;
+    color: #ff9900;
+    padding: 5px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+.window-content {
+    flex-grow: 1;
+    padding: 10px;
+    overflow: auto;
+}
+
+.window-content pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: #ff5151;
+    cursor: pointer;
+}
+
+#tab-area {
+    display: flex;
+    background-color: #000;
+    padding: 5px;
+    position: relative;
+    z-index: 1001;
+}
+
+.tab {
+    background-color: #333;
+    color: #ff9900;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: #ff9900;
+    color: #000;
+}
+
+#new-tab {
+    background-color: #333;
+    color: #ff9900;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.window-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.window-content::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+.window-content::-webkit-scrollbar-thumb {
+    background-color: #00ff00;
+    border-radius: 4px;
+}
+
+/* Data tables */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.data-table th,
+.data-table td {
+    text-align: left;
+    padding: 4px 8px;
+    border-bottom: 1px solid #333;
+}
+
+.data-table th {
+    color: #ff9900;
+    font-weight: bold;
+}
+
+.positive {
+    color: #00ff00;
+}
+
+.negative {
+    color: #ff0000;
+}
+
+.neutral {
+    color: #ffff00;
+}
+
+/* Chart styles */
+.chart-container {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #333;
+}
+
+.chart-bar {
+    display: flex;
+    align-items: center;
+    margin: 2px 0;
+    font-size: 12px;
+}
+
+.chart-label {
+    width: 80px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.chart-visual {
+    color: #00ff00;
+}
+
+/* Add these styles to terminal.css */
+
+/* Chart Module Styles */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #333;
+}
+
+.chart-title {
+  color: #ff9900;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.chart-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timeframe-selector {
+  background-color: #333;
+  color: #ff9900;
+  border: 1px solid #444;
+  border-radius: 3px;
+  padding: 4px 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+}
+
+.chart-type-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.chart-type-buttons button {
+  background-color: #333;
+  color: #ccc;
+  border: 1px solid #444;
+  border-radius: 3px;
+  padding: 4px 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.chart-type-buttons button.active {
+  background-color: #ff9900;
+  color: #000;
+  font-weight: bold;
+}
+
+.chart-container {
+  height: 400px;
+  margin-bottom: 10px;
+}
+
+.chart-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  font-size: 12px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-label {
+  color: #888;
+}
+
+.stat-value {
+  font-weight: bold;
+}
+
+/* D3 Chart Styles */
+.grid line {
+  stroke: #333;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+
+.x-axis path,
+.y-axis path {
+  stroke: #444;
+}
+
+.x-axis text,
+.y-axis text {
+  fill: #888;
+  font-size: 10px;
+}
+
+.candle {
+  stroke-width: 1;
+}
+
+.wick {
+  stroke-width: 1;
+}
+
+.line {
+  stroke-width: 2;
+}
+
+/* Crosshair styles */
+.focus {
+  pointer-events: none;
+}
+
+.focus line {
+  stroke: rgba(255, 153, 0, 0.3);
+  stroke-width: 1;
+  stroke-dasharray: 3,3;
+}
+
+.focus circle {
+  fill: #ff9900;
+  stroke: #000;
+  stroke-width: 1;
+}
+
+.focus text {
+  fill: #ff9900;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000;
+}
+
+/* Add to terminal.css */
+
+/* Improved Dropdown */
+.timeframe-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.timeframe-selector select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #333;
+  color: #ff9900;
+  border: 1px solid #444;
+  border-radius: 3px;
+  padding: 4px 25px 4px 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+}
+
+.timeframe-selector:after {
+  content: "▼";
+  color: #ff9900;
+  font-size: 10px;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.timeframe-selector select:focus {
+  border-color: #ff9900;
+}
+
+/* Lighter grid lines */
+.grid line {
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-width: 0.5;
+  shape-rendering: crispEdges;
+}
+
+/* Current price line */
+.current-price-line {
+  stroke: #ff9900;
+  stroke-width: 1;
+  stroke-dasharray: 3,3;
+  opacity: 0.7;
+}
+
+/* Price label */
+.price-label {
+  fill: #ff9900;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* Candlestick colors */
+.candle.up {
+  fill: #4CAF50;
+  stroke: #4CAF50;
+}
+
+.candle.down {
+  fill: #F44336;
+  stroke: #F44336;
+}
+
+.wick.up {
+  stroke: #4CAF50;
+}
+
+.wick.down {
+  stroke: #F44336;
+}

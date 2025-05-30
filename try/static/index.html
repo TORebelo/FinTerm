@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Terminal Dashboard</title>
+    <link rel="stylesheet" href="/static/css/terminal.css">
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+</head>
+<body>
+    <div id="terminal">
+        <div id="command-area">
+            <span id="prompt">></span>
+            <input type="text" id="input" autofocus placeholder="Type 'help' for commands">
+        </div>
+        <div id="main-area"></div>
+        <div id="tab-area">
+            <button class="tab active">Terminal 1</button>
+            <button id="new-tab">+</button>
+            <div id="status">
+                <span id="window-count">0 windows</span>
+                <span id="clock"></span>
+            </div>
+        </div>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="module" src="/static/js/terminal.js"></script>
+</body>
+</html>
