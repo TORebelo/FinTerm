@@ -31,7 +31,22 @@ async def add_stock_to_portfolio(stock_info: StockPurchaseInfo = Body(...)):
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        raise HTTPException(status_code=500, detail="An internal error occurred while adding the stock.")
+        raise HTTPException(status_code=500, detail=f"An internal error occurred while adding the stock: {str(e)}")
+
+# Legacy endpoint for backward compatibility with the frontend
+@router.post("/")
+async def legacy_add_stock(symbol: str = Body(...), shares: int = Body(...), price: float = Body(...)):
+    """Legacy endpoint for adding stock to portfolio"""
+    try:
+        stock_info = StockPurchaseInfo(
+            ticker=symbol.upper(),
+            shares=shares,
+            purchase_price=price,
+            purchase_date=datetime.now()
+        )
+        return await add_stock_to_portfolio(stock_info)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error adding stock: {str(e)}")
 
 @router.get("/summary", response_model=PortfolioSummary)
 async def get_portfolio_summary():
@@ -62,7 +77,7 @@ async def get_portfolio_summary():
             total_gain_loss=summary.totalGainLoss
         )
     except Exception as e:
-        raise HTTPException(status_code=500, detail="An internal error occurred while fetching portfolio summary.")
+        raise HTTPException(status_code=500, detail=f"An internal error occurred while fetching portfolio summary: {str(e)}")
 
 @router.delete("/{ticker}")
 async def remove_stock_from_portfolio(ticker: str):

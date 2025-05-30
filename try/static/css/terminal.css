@@ -400,3 +400,366 @@ body, html {
 .wick.down {
   stroke: #F44336;
 }
+
+/* Live Price Display */
+.live-price-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.live-price-display .ticker {
+  font-size: 24px;
+  color: #ff9900;
+  font-weight: bold;
+}
+
+.live-price-display .price {
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+/* Window Controls */
+.window-controls {
+  display: flex;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.window-controls button {
+  background: none;
+  border: 1px solid #444;
+  color: #ccc;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.window-controls button:hover {
+  background-color: #333;
+}
+
+.arrange-buttons {
+  display: flex;
+  gap: 5px;
+  margin-left: 10px;
+}
+
+.arrange-buttons button {
+  background: #333;
+  border: 1px solid #444;
+  color: #ccc;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
+.arrange-buttons button:hover {
+  background-color: #444;
+}
+
+/* Add these styles to your existing CSS */
+
+.active-window {
+  box-shadow: 0 0 10px rgba(255, 153, 0, 0.5) !important;
+  border: 1px solid #ff9900 !important;
+}
+
+.live-price-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.live-price-ticker {
+  font-size: 18px;
+  color: #ff9900;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.live-price-display {
+  margin: 15px 0;
+}
+
+.live-price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.live-change {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.live-price-status {
+  font-size: 10px;
+  color: #888;
+  margin-top: 10px;
+}
+
+.loading {
+  color: #ff9900;
+  font-style: italic;
+}
+
+.error {
+  color: #ff4444;
+}
+
+.notification {
+  border: 2px solid #ff9900 !important;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Chart improvements */
+.grid {
+  stroke: #333;
+  stroke-width: 0.5px;
+  opacity: 0.3;
+}
+
+.candle.up {
+  fill: #4caf50;
+  stroke: #4caf50;
+}
+
+.candle.down {
+  fill: #f44336;
+  stroke: #f44336;
+}
+
+.wick.up {
+  stroke: #4caf50;
+}
+
+.wick.down {
+  stroke: #f44336;
+}
+
+.x-axis,
+.y-axis {
+  color: #ccc;
+}
+
+.x-axis text,
+.y-axis text {
+  fill: #ccc;
+  font-size: 10px;
+}
+
+.focus circle {
+  fill: #ff9900;
+  stroke: #ff9900;
+}
+
+.focus text {
+  fill: #ff9900;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.x-hair,
+.y-hair {
+  stroke: #ff9900;
+  stroke-width: 1px;
+  stroke-dasharray: 2, 2;
+  opacity: 0.7;
+}
+
+.current-price-line {
+  opacity: 0.8;
+}
+/* Add these styles to your existing CSS */
+
+.active-window {
+  box-shadow: 0 0 8px rgba(255, 153, 0, 0.4) !important;
+  border: 1px solid #ff9900 !important;
+}
+
+.live-price-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.live-price-ticker {
+  font-size: 18px;
+  color: #ff9900;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.live-price-display {
+  margin: 15px 0;
+}
+
+.live-price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.live-change {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.live-price-status {
+  font-size: 10px;
+  color: #888;
+  margin-top: 10px;
+}
+
+.loading {
+  color: #ff9900;
+  font-style: italic;
+}
+
+.error {
+  color: #ff4444;
+}
+
+.notification {
+  border: 2px solid #ff9900 !important;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Chart improvements */
+.grid {
+  stroke: #333;
+  stroke-width: 0.5px;
+  opacity: 0.3;
+}
+
+.candle.up {
+  fill: #4caf50;
+  stroke: #4caf50;
+}
+
+.candle.down {
+  fill: #f44336;
+  stroke: #f44336;
+}
+
+.wick.up {
+  stroke: #4caf50;
+}
+
+.wick.down {
+  stroke: #f44336;
+}
+
+.x-axis,
+.y-axis {
+  color: #ccc;
+}
+
+.x-axis text,
+.y-axis text {
+  fill: #ccc;
+  font-size: 10px;
+}
+
+.focus circle {
+  fill: #ff9900;
+  stroke: #ff9900;
+}
+
+.focus text {
+  fill: #ff9900;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.x-hair,
+.y-hair {
+  stroke: #ff9900;
+  stroke-width: 1px;
+  stroke-dasharray: 2, 2;
+  opacity: 0.7;
+}
+
+.current-price-line {
+  opacity: 0.8;
+}
+
+/* Add styles for mock data notice and improve keyboard shortcut visibility */
+
+.mock-data-notice {
+  font-size: 10px;
+  color: #888;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* .window.active-window {
+  box-shadow: 0 0 8px rgba(255, 153, 0, 0.4) !important;
+  border: 1px solid #ff9900 !important;
+} */
+
+/* Improve keyboard shortcuts positioning */
+#keyboard-shortcuts {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #333;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 10px;
+  color: #ccc;
+  z-index: 9999;
+  max-width: 200px;
+  line-height: 1.3;
+}
+
+#keyboard-shortcuts div {
+  margin: 2px 0;
+}
+
+#keyboard-shortcuts kbd {
+  background: #333;
+  border-radius: 2px;
+  padding: 1px 3px;
+  margin: 0 1px;
+  font-size: 9px;
+  border: 1px solid #555;
+}
+
+/* Add transition for window movement */
+.window {
+  transition: box-shadow 0.2s ease, border 0.2s ease;
+}
+
+/* Ensure windows don't go off screen */
+.window {
+  min-width: 300px;
+  min-height: 200px;
+  max-width: calc(100vw - 20px);
+  max-height: calc(100vh - 20px);
+}
+
